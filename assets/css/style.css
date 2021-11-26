@@ -463,8 +463,9 @@ section {
 /*--------------------------------------------------------------
 # Picture
 --------------------------------------------------------------*/
-#picture {
+#picture1 {
   height: 75vh;
+  background: url("../img/pic1.jpg") top right no-repeat;
   background-size: cover;
   position: relative;
   padding-right: 300px;
@@ -472,7 +473,7 @@ section {
   padding-left: 300px;
   margin-left: -300px;
 }
-#picture:before {
+#picture1:before {
   content: "";
   background: rgba(255, 255, 255, 0.3);
   position: absolute;
@@ -483,7 +484,7 @@ section {
 }
 #picture2 {
   height: 75vh;
-  background: url("../img/pic1.jpg") top right no-repeat;
+  background: url("../img/pic2.jpg") top right no-repeat;
   background-size: cover;
   position: relative;
   padding-right: 300px;
@@ -502,7 +503,7 @@ section {
 }
 #picture3 {
   height: 75vh;
-  background: url("../img/camp-bg.png") top right no-repeat;
+  background: url("../img/pic3.jpg") top right no-repeat;
   background-size: cover;
   position: relative;
   padding-right: 300px;
