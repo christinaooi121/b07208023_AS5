@@ -465,7 +465,7 @@ section {
 --------------------------------------------------------------*/
 #picture1 {
   height: 75vh;
-  background: url("../img/pic1.jpg") top right no-repeat;
+  background-image: url("../img/pic1.jpg") top right no-repeat;
   background-size: cover;
   position: relative;
   padding-right: 300px;
@@ -484,7 +484,7 @@ section {
 }
 #picture2 {
   height: 75vh;
-  background: url("../img/pic2.jpg") top right no-repeat;
+  background-image: url("../img/pic2.jpg") top right no-repeat;
   background-size: cover;
   position: relative;
   padding-right: 300px;
@@ -503,7 +503,7 @@ section {
 }
 #picture3 {
   height: 75vh;
-  background: url("../img/pic3.jpg") top right no-repeat;
+  background-image: url("../img/pic3.jpg") top right no-repeat;
   background-size: cover;
   position: relative;
   padding-right: 300px;
@@ -522,7 +522,7 @@ section {
 }
 #picture4 {
   height: 75vh;
-  background: url("../img/otw-bg.png") top right no-repeat;
+  background-image: url("../img/otw-bg.png") top right no-repeat;
   background-size: cover;
   position: relative;
   padding-right: 300px;
