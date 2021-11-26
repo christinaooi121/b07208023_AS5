@@ -17,76 +17,7 @@
 </head>
 
 <body>
-    <script>
-        $(function () {
-            var h_pos = $("#horizontal").offset().top;
-            var hframe_h = $("#hframe").height();
-            var winh = $(window).height();
-            var max_scroll = $(document).height() - $(window).height();
-            var max_w = $("#horizontal").width() - $(window).width();
-            //var video1_pos = $("#video1").offset().top;
-            //var video1_end = $("#video1").offset().top + $("#v1frame").height();
-
-            $(window).on("resize", function () {
-                winh = $(window).height();
-                max_scroll = $(document).height() - $(window).height();
-                max_w = $("#horizontal").width() - $(window).width();
-            });
-
-            $(window).scroll(function () {
-                var scrolled = $(window).scrollTop();
-
-                /*Horizontal Image*/
-                if (scrolled > h_pos && scrolled < h_pos + hframe_h - winh) {
-                    var new_left = -1 * max_w * ((scrolled - h_pos) / (hframe_h - winh));
-                    $("#horizontal").css({
-                        left: new_left
-                    });
-                }
-
-                /*Slide photos*/
-                $(".slideanimate").each(function () {
-                    var objpos = $(this).offset().top;
-                    if (objpos < scrolled + winh * 0.8) {
-                        $(this).addClass("slide");
-                    }
-                });
-
-                /*Video Triggered*/
-                /*
-                console.log(scrolled);
-                if (scrolled > video1_pos && scrolled < video1_end) {
-                    $("#video1")[0].play();
-                } else {
-                    $("#vidoe1")[0].pause();
-                }
-                */
-                var video = $('#video1').get(0),
-                    videoLength = video.duration,
-                    current_pos = $(window).scrollTop();
-                video.currentTime = videoLength * (current_pos / max_scroll);
-
-                /*
-                if (
-                    scrolled > video1_pos &&
-                    scrolled < video1_end &&
-                    !$("#video1").hasClass("played")
-                ) {
-                    $("#video1")[0].play();
-                    $("#video1").on("ended", function () {
-                        $("#video1").addClass("played");
-                    });
-                }
-                if (scrolled < video1_pos) {
-                    $("#video1").removeClass("played");
-                }
-                */
-            });
-        });
-    </script>
     <div class="container-fluid px-0">
-
-
         <div style="height:100vh; background-color:maroon; background-image:linear-gradient(maroon, black);">
             <h1>光電與鹽田生態共存？ 擁護與反對者 共同用21年環境監測找答案</h1>
             <h2>環境資訊中心記者 陳文姿報導</h2>
@@ -97,51 +28,30 @@
             <p>光電與濕地能共存嗎？信心滿滿、相信可以藉由友善環境的工法、或是不同季節的施工、社區合作一起找到答案的天泰能源，找上不認同濕地光電，但希望用研究找到真相的林惠真團隊進行生態調查。這份研究將持續21年，將會是台灣首度系統性、全面性的鹽田光電全紀錄，見證台灣鹽田光電的環境變化。
             </p>
         </div>
-        <div id="hframe" style="height:500vh">
-            <div class="sticky-top">
-                <div id="horizontal">
-                    <img src="https://static01.nyt.com/newsgraphics/2016/07/14/france-attack-scroller/9ec6dcec7e22fffa81a21fb790ba566f2c6aee83/base-big.jpg"
-                        style="height:100vh;width:auto" />
-                </div>
-            </div>
-        </div>
-        <div
-            style="padding:20%; background-color:black; background-image:linear-gradient(#0273ab, black); height:20vh;">
-            <p style="color:white;">
-                從前有座山，山裏有座廟，廟裏有個老和尚和小和尚。老和尚對小和尚説：「從前有座山，山裏有座廟，廟裏有個老和尚和小和尚。老和尚對小和尚説：「從前有座山，山裏有座廟，廟裏有個老和尚和小和尚。老和尚對小和尚説：「從前有座山，山裏有座廟，廟裏有個老和尚和小和尚。老和尚對小和尚説：……」。」。」。
-            </p>
-        </div>
-        <div>
-            <img class="slideanimate" id="img1" alt="img1"
-                src="https://p4css.github.io/webScroll/assets/taipei-1.jpg" />
-            <div class="row">
-                <div class="col-6"></div>
-                <div class="col-6">
-                    <img class="slideanimate" id="img2" alt="img2"
-                        src="https://p4css.github.io/webScroll/assets/taipei-1.jpg" />
-                </div>
-            </div>
-        </div>
-        <div
-            style="padding:20%; background-color:black; background-image:linear-gradient(#131922, black); height:20vh;">
-            <p style="color:white;">
-                從前有座山，山裏有座廟，廟裏有個老和尚和小和尚。老和尚對小和尚説：「從前有座山，山裏有座廟，廟裏有個老和尚和小和尚。老和尚對小和尚説：「從前有座山，山裏有座廟，廟裏有個老和尚和小和尚。老和尚對小和尚説：「從前有座山，山裏有座廟，廟裏有個老和尚和小和尚。老和尚對小和尚説：……」。」。」。
-            </p>
-        </div>
-        <div id="v1frame" style="height:800vh;">
-            <div class="sticky-top" style="z-index:-1">
-                <video id="video1" src="assets/train.mp4" style="width:100%;"></video>
-            </div>
-            <div class="row px-0" style="height:100vh">
-                <div class="col-8"></div>
-                <div class="col-4" style="height:30vh;background-color:rgba(0,0,0,0.5);">
-                    <p style="color:white; text-align:center;">這裡沒有文字</p>
-                </div>
-                <div class="col-12">
-                    <h1>對，滑快一點！</h1>
-                </div>
-            </div>
-        </div>
+
+        <script>
+            (function () {
+                var namespace = '__twreporterEmbeddedData';
+                var pkg = 'scrollable-video';
+                if (typeof window != 'undefined') {
+                    if (!window.hasOwnProperty(namespace)) {
+                        window[namespace] = {};
+                    }
+                    if (window[namespace] && !window[namespace].hasOwnProperty(pkg)) {
+                        window[namespace][pkg] = [];
+                    }
+                    if (Array.isArray(window[namespace][pkg])) {
+                        var data = { "video": { "sources": [{ "type": "video\u002Fmp4", "src": "https:\u002F\u002Fi.imgur.com\u002FUTT7u5P.mp4", "width": 1280, "height": 720 }, { "type": "video\u002Fmp4", "src": "https:\u002F\u002Fi.imgur.com\u002FUTT7u5P.mp4", "width": 1440, "height": 810 }, { "type": "video\u002Fmp4", "src": "https:\u002F\u002Fi.imgur.com\u002FUTT7u5P.mp4", "width": 1920, "height": 1080 }, { "type": "video\u002Fmp4", "src": "https:\u002F\u002Fi.imgur.com\u002FUTT7u5P.mp4", "width": 720, "height": 1080 }, { "type": "video\u002Fmp4", "src": "https:\u002F\u002Fi.imgur.com\u002FUTT7u5P.mp4", "width": 960, "height": 1440 }] }, "captions": [{ "text": "嘉義布袋，是候鳥重要棲息地，但也是政府積極布局的鹽田光電預定地。", "time": 1.5 }, { "text": "天泰能源標下的22公頃鹽田，雖然並非是國家重要濕地，卻地處國際鳥盟指定的「重要野鳥棲地」範圍。", "time": 3.5 }, { "text": "天泰的基地之一，就位於滯洪池旁的填土區中。", "time": 12.5 }], "appProps": { "captionsSetting": { "xBoxAlign": "right", "xPosition": "8.7%", "yBoxAlign": "bottom", "yPosition": "20px" }, "captionSetting": { "textAlign": "right" }, "secondsPer100vh": 1.5, "skipLoadLocationRegExp": "editor", "forcedPreloadVideo": true, "gsapVersion": "3.5.1", "scrollTriggerVersion": "3.5.1", "pollingTimeout": 700, "preloadCacheType": "force-cache" }, "theme": { "mq": { "mobileMaxWidth": "767px" }, "captions": { "color": "#fff", "link": { "color": "#a67a44", "underlineColor": "#a67a44" }, "lineHieght": "1.7", "mobileLineHeight": "1.7", "fontStyle": "normal", "fontWeight": "bold", "fontSize": "24px", "mobile": { "fontSize": "22px" }, "fontFamily": "ff-tisa-web-pro, source-han-sans-traditional, Noto Sans TC, PingFang TC, Apple LiGothic Medium, Roboto, Microsoft JhengHei, Lucida Grande, Lucida Sans Unicode, sans-serif", "box": { "background": "#404040", "width": "450px", "mobileWidth": "77%", "spanPadding": "6px 15px", "mobilePadding": "12px 12px 14px 18px" } } }, "uuid": "74ce75bd-edd7-4edf-8f48-1d3869d782ff" };
+                        window[namespace][pkg].push(data);
+                    }
+                }
+            })()
+        </script>
+        <div id="74ce75bd-edd7-4edf-8f48-1d3869d782ff"></div>
+
+        <script type="text/javascript" crossorigin
+            src="https://unpkg.com/@twreporter/scrollable-video@1.0.0-rc.3/dist/main.142ef5f0d6d2dfdb8b8d.bundle.js"></script>
+
         <div style="height:50vh;background:black; background-image:linear-gradient(black, maroon);padding: 30%;">
             <p style="top:25vh; text-align:center;color: white;font-size: 1.5rem;">黃嘉晴　地理四　B07208023</p>
         </div>
