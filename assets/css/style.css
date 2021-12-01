@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background-image: url("https://lh3.googleusercontent.com/1Km_aud7F1ZIV3usEg_3aT29GOupRwBTzqGED8iRnr4dAmVlFXBT_E1xE03JYOwOpLRqk1RoUlCswT6bOnkuOIHa1qNrV5WnDMCtN9hWx02WkZ_Jvm-0EnWkY44OeQ70O61X8IA9eGU=w2400") top right no-repeat;
+  background-image: url(https://lh3.googleusercontent.com/1Km_aud7F1ZIV3usEg_3aT29GOupRwBTzqGED8iRnr4dAmVlFXBT_E1xE03JYOwOpLRqk1RoUlCswT6bOnkuOIHa1qNrV5WnDMCtN9hWx02WkZ_Jvm-0EnWkY44OeQ70O61X8IA9eGU=w2400) top right no-repeat;
   background-size: cover;
   position: relative;
 }
