@@ -6,6 +6,15 @@
 }
 
 #bg-img {
-    background: url("../img/1.jpg") top right no-repeat;
+	background-image: url(https://i.imgur.com/OZkk4K9.png);
 	background-position: 0 0;
+}
+
+#banner{
+	background-color:black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	filter: brightness(50%);
+	color:white;
 }
