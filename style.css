@@ -6,6 +6,6 @@
 }
 
 #bg-img {
-	background-image: url(https://p4css.github.io/webScroll/images/Linpen2019_lg.jpg);
+    background: url("../img/1.jpg") top right no-repeat;
 	background-position: 0 0;
 }
